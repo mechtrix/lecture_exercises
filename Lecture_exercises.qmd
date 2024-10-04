@@ -24,3 +24,9 @@ Let's try loading libraries!
 ```{webr-r}
 library(dplyr)
 ```
+
+Here we have loaded the [dplyr](https://dplyr.tidyverse.org/) package, which is used for data manipulation.
+It is part of the much bigger [tidyverse](https://www.tidyverse.org/).
+Since the packages always have to be installed, we will not use the more extensive command `library(tidyverse)`.
+This would trigger to install a lot of packages.
+If you want to do this on your own machine, please do so
