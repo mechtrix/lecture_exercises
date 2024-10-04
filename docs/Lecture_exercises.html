@@ -355,7 +355,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"1+1","id":1,"options":{"warning":"true","classes":"","fig-cap":"","message":"true","editor-font-scale":"1","read-only":"false","autorun":"false","comment":"","editor-word-wrap":"true","out-height":"","editor-max-height":"","fig-height":5,"output":"true","out-width":"700px","results":"markup","context":"interactive","editor-quick-suggestions":"false","dpi":72,"fig-width":7,"label":"unnamed-chunk-1"}},{"code":"library(dplyr)","id":2,"options":{"warning":"true","classes":"","fig-cap":"","message":"true","editor-font-scale":"1","read-only":"false","autorun":"false","comment":"","editor-word-wrap":"true","out-height":"","editor-max-height":"","fig-height":5,"output":"true","out-width":"700px","results":"markup","context":"interactive","editor-quick-suggestions":"false","dpi":72,"fig-width":7,"label":"unnamed-chunk-2"}}];
+globalThis.qwebrCellDetails = [{"id":1,"options":{"classes":"","results":"markup","out-height":"","autorun":"false","dpi":72,"context":"interactive","warning":"true","output":"true","comment":"","label":"unnamed-chunk-1","read-only":"false","editor-font-scale":"1","editor-max-height":"","fig-height":5,"message":"true","editor-quick-suggestions":"false","out-width":"700px","editor-word-wrap":"true","fig-width":7,"fig-cap":""},"code":"1+1"},{"id":2,"options":{"classes":"","results":"markup","out-height":"","autorun":"false","dpi":72,"context":"interactive","warning":"true","output":"true","comment":"","label":"unnamed-chunk-2","read-only":"false","editor-font-scale":"1","editor-max-height":"","fig-height":5,"message":"true","editor-quick-suggestions":"false","out-width":"700px","editor-word-wrap":"true","fig-width":7,"fig-cap":""},"code":"library(dplyr)"},{"id":3,"options":{"classes":"","results":"markup","out-height":"","autorun":"false","dpi":72,"context":"interactive","warning":"true","output":"true","comment":"","label":"unnamed-chunk-3","read-only":"false","editor-font-scale":"1","editor-max-height":"","fig-height":5,"message":"true","editor-quick-suggestions":"false","out-width":"700px","editor-word-wrap":"true","fig-width":7,"fig-cap":""},"code":"data(\"Titanic\")"},{"id":4,"options":{"classes":"","results":"markup","out-height":"","autorun":"false","dpi":72,"context":"interactive","warning":"true","output":"true","comment":"","label":"unnamed-chunk-4","read-only":"false","editor-font-scale":"1","editor-max-height":"","fig-height":5,"message":"true","editor-quick-suggestions":"false","out-width":"700px","editor-word-wrap":"true","fig-width":7,"fig-cap":""},"code":"print(Titanic)\nhead(Titanic)\ndplyr::glimpse(Titanic)"},{"id":5,"options":{"classes":"","results":"markup","out-height":"","autorun":"true","dpi":72,"context":"setup","warning":"true","output":"true","comment":"","label":"unnamed-chunk-5","read-only":"false","editor-font-scale":"1","editor-max-height":"","fig-height":5,"message":"true","editor-quick-suggestions":"false","out-width":"700px","editor-word-wrap":"true","fig-width":7,"fig-cap":""},"code":"# Download a dataset\ndownload.file(\n  'https://coatless.github.io/raw-data/flights.csv',\n  'flights.csv'\n)\n"},{"id":6,"options":{"classes":"","results":"markup","out-height":"","autorun":"false","dpi":72,"context":"interactive","warning":"true","output":"true","comment":"","label":"unnamed-chunk-6","read-only":"false","editor-font-scale":"1","editor-max-height":"","fig-height":5,"message":"true","editor-quick-suggestions":"false","out-width":"700px","editor-word-wrap":"true","fig-width":7,"fig-cap":""},"code":"flights_data_base <-  read.csv(\"flights.csv\")\nflights_data_readr <-  read.csv(\"flights.csv\")"}];
 
 </script>
 <script type="module">
@@ -1568,8 +1568,16 @@ globalThis.qwebrExecuteCode = async function (
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#your-personal-r-environment" id="toc-your-personal-r-environment" class="nav-link active" data-scroll-target="#your-personal-r-environment">Your personal R environment</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting started</a>
+  <ul class="collapse">
+  <li><a href="#your-personal-r-environment" id="toc-your-personal-r-environment" class="nav-link" data-scroll-target="#your-personal-r-environment">Your personal R environment</a></li>
   <li><a href="#loading-libraries" id="toc-loading-libraries" class="nav-link" data-scroll-target="#loading-libraries">loading libraries</a></li>
+  </ul></li>
+  <li><a href="#data-sources" id="toc-data-sources" class="nav-link" data-scroll-target="#data-sources">Data Sources</a>
+  <ul class="collapse">
+  <li><a href="#data-provided-by-r" id="toc-data-provided-by-r" class="nav-link" data-scroll-target="#data-provided-by-r">data provided by R</a></li>
+  <li><a href="#csv" id="toc-csv" class="nav-link" data-scroll-target="#csv">csv</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -1879,20 +1887,45 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </header>
 
 
-<section id="your-personal-r-environment" class="level1">
-<h1>Your personal R environment</h1>
+<section id="getting-started" class="level1">
+<h1>Getting started</h1>
+<section id="your-personal-r-environment" class="level2">
+<h2 class="anchored" data-anchor-id="your-personal-r-environment">Your personal R environment</h2>
 <p>Below you can see R running in the browser. It is not as powerful as if we install R on the machine, but it spares us the hassle of setting R up on every of your Computers. You can type some simple math to try it out! You can run single lines by pressing <code>Ctrl</code> + <code>Enter</code>.</p>
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
-<section id="loading-libraries" class="level1">
-<h1>loading libraries</h1>
+<section id="loading-libraries" class="level2">
+<h2 class="anchored" data-anchor-id="loading-libraries">loading libraries</h2>
 <p>As most open source software, R builds upon loading libraries. Usually those are found on <a href="https://cran.r-project.org/">CRAN</a>, but in our case they need to be provided. Let’s try loading libraries!</p>
 <div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>Here we have loaded the <a href="https://dplyr.tidyverse.org/">dplyr</a> package, which is used for data manipulation. It is part of the much bigger <a href="https://www.tidyverse.org/">tidyverse</a>. Since the packages always have to be installed, we will not use the more extensive command <code>library(tidyverse)</code>. This would trigger to install a lot of packages. If you want to do this on your own machine, please do so</p>
+</section>
+</section>
+<section id="data-sources" class="level1">
+<h1>Data Sources</h1>
+<p>For BigData we need - Data. There are many sources out there, we will start working with a couple of them.</p>
+<section id="data-provided-by-r" class="level2">
+<h2 class="anchored" data-anchor-id="data-provided-by-r">data provided by R</h2>
+<p>You can simply use data that is natively provided by R. A famous example is the titanic data set. Do this using the <code>data()</code> command as provided below</p>
+<div id="qwebr-insertion-location-3"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>There is not a lot that happened, because we do not use an IDE. An IDE like RStudio would acutally display the variables. This is a trade-off we have to live with the convinienct of not setting up R, but of course, there are ways around it. Below are a couple of ways to display data: - the <code>print</code>command is the most verbose way to output data - the <code>head</code> command prints only the first couple of lines (can be specified using <code>head(object, n = X</code>) - the <code>glimpse</code> command is very convenient, but needs the <code>dplyr</code> package to be loaded or referenced (with <code>::</code> as shown below)</p>
+<div id="qwebr-insertion-location-4"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</section>
+<section id="csv" class="level2">
+<h2 class="anchored" data-anchor-id="csv">csv</h2>
+<div id="qwebr-insertion-location-5"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Reading a csv is fairly simple, we just need the file path. Lucky for you this has been prepared, the file was already downloaded to the Virtual File System that webR uses.</p>
+<div id="qwebr-insertion-location-6"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>It is hard to provide static files in the webR file system, that is why we will use an uploaded file and download it to the Virtual webR file system. You can follow the steps below.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

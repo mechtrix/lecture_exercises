@@ -2,9 +2,13 @@
 title: "Big Data exercises"
 filters: 
   - webr
+editor_options: 
+  chunk_output_type: console
 ---
 
-# Your personal R environment
+# Getting started
+
+## Your personal R environment
 
 Below you can see R running in the browser. 
 It is not as powerful as if we install R on the machine, but it spares us the hassle of setting R up on every of your Computers.
@@ -15,7 +19,7 @@ You can run single lines by pressing `Ctrl` + `Enter`.
 1+1
 ```
 
-# loading libraries
+## loading libraries
 
 As most open source software, R builds upon loading libraries. 
 Usually those are found on [CRAN](https://cran.r-project.org/), but in our case they need to be provided.
@@ -31,5 +35,63 @@ Since the packages always have to be installed, we will not use the more extensi
 This would trigger to install a lot of packages.
 If you want to do this on your own machine, please do so
 
+# Data Sources
 
+For BigData we need - Data.
+There are many sources out there, we will start working with a couple of them.
+
+## data provided by R
+
+You can simply use data that is natively provided by R.
+A famous example is the titanic data set.
+Do this using the `data()` command as provided below
+
+```{webr-r}
+
+data("Titanic")
+
+```
+
+There is not a lot that happened, because we do not use an IDE.
+An IDE like RStudio would acutally display the variables.
+This is a trade-off we have to live with the convinienct of not setting up R, but of course, there are ways around it.
+Below are a couple of ways to display data:
+- the `print`command is the most verbose way to output data
+- the `head` command prints only the first couple of lines (can be specified using `head(object, n = X`)
+- the `glimpse` command is very convenient, but needs the `dplyr` package to be loaded or referenced (with `::` as shown below)
+
+```{webr-r}
+print(Titanic)
+head(Titanic)
+dplyr::glimpse(Titanic)
+```
+
+
+## csv
+
+```{webr-r}
+
+#| context: setup
+
+# Download a dataset
+download.file(
+  'https://coatless.github.io/raw-data/flights.csv',
+  'flights.csv'
+)
+
+
+```
+
+Reading a csv is fairly simple, we just need the file path.
+Lucky for you this has been prepared, the file was already downloaded to the Virtual File System that webR uses.
+
+```{webr-r}
+
+flights_data_base <-  read.csv("flights.csv")
+flights_data_readr <-  read.csv("flights.csv")
+
+```
+
+It is hard to provide static files in the webR file system, that is why we will use an uploaded file and download it to the Virtual webR file system.
+You can follow the steps below.
 

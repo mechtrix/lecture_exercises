@@ -4,6 +4,34 @@
     "href": "Lecture_exercises.html",
     "title": "Big Data exercises",
     "section": "",
-    "text": "Your personal R environment\nBelow you can see R running in the browser. It is not as powerful as if we install R on the machine, but it spares us the hassle of setting R up on every of your Computers. You can type some simple math to try it out! You can run single lines by pressing Ctrl + Enter.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nloading libraries\nAs most open source software, R builds upon loading libraries. Usually those are found on CRAN, but in our case they need to be provided. Let’s try loading libraries!\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nHere we have loaded the dplyr package, which is used for data manipulation. It is part of the much bigger tidyverse. Since the packages always have to be installed, we will not use the more extensive command library(tidyverse). This would trigger to install a lot of packages. If you want to do this on your own machine, please do so"
+    "text": "Below you can see R running in the browser. It is not as powerful as if we install R on the machine, but it spares us the hassle of setting R up on every of your Computers. You can type some simple math to try it out! You can run single lines by pressing Ctrl + Enter.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nAs most open source software, R builds upon loading libraries. Usually those are found on CRAN, but in our case they need to be provided. Let’s try loading libraries!\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nHere we have loaded the dplyr package, which is used for data manipulation. It is part of the much bigger tidyverse. Since the packages always have to be installed, we will not use the more extensive command library(tidyverse). This would trigger to install a lot of packages. If you want to do this on your own machine, please do so"
+  },
+  {
+    "objectID": "Lecture_exercises.html#your-personal-r-environment",
+    "href": "Lecture_exercises.html#your-personal-r-environment",
+    "title": "Big Data exercises",
+    "section": "",
+    "text": "Below you can see R running in the browser. It is not as powerful as if we install R on the machine, but it spares us the hassle of setting R up on every of your Computers. You can type some simple math to try it out! You can run single lines by pressing Ctrl + Enter.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "Lecture_exercises.html#loading-libraries",
+    "href": "Lecture_exercises.html#loading-libraries",
+    "title": "Big Data exercises",
+    "section": "",
+    "text": "As most open source software, R builds upon loading libraries. Usually those are found on CRAN, but in our case they need to be provided. Let’s try loading libraries!\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nHere we have loaded the dplyr package, which is used for data manipulation. It is part of the much bigger tidyverse. Since the packages always have to be installed, we will not use the more extensive command library(tidyverse). This would trigger to install a lot of packages. If you want to do this on your own machine, please do so"
+  },
+  {
+    "objectID": "Lecture_exercises.html#data-provided-by-r",
+    "href": "Lecture_exercises.html#data-provided-by-r",
+    "title": "Big Data exercises",
+    "section": "data provided by R",
+    "text": "data provided by R\nYou can simply use data that is natively provided by R. A famous example is the titanic data set. Do this using the data() command as provided below\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThere is not a lot that happened, because we do not use an IDE. An IDE like RStudio would acutally display the variables. This is a trade-off we have to live with the convinienct of not setting up R, but of course, there are ways around it. Below are a couple of ways to display data: - the printcommand is the most verbose way to output data - the head command prints only the first couple of lines (can be specified using head(object, n = X) - the glimpse command is very convenient, but needs the dplyr package to be loaded or referenced (with :: as shown below)\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "Lecture_exercises.html#csv",
+    "href": "Lecture_exercises.html#csv",
+    "title": "Big Data exercises",
+    "section": "csv",
+    "text": "csv\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nReading a csv is fairly simple, we just need the file path. Lucky for you this has been prepared, the file was already downloaded to the Virtual File System that webR uses.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nIt is hard to provide static files in the webR file system, that is why we will use an uploaded file and download it to the Virtual webR file system. You can follow the steps below."
   }
 ]
