@@ -1,0 +1,15 @@
+---
+title: "Big Data exercises"
+filters: 
+  - webr
+---
+
+## Your personal R environment
+
+Below you can see R running in the browser. 
+It is not as powerful as if we install R on the machine, but it spares us the hassle of setting R up on every of your Computers.
+
+```{webr-r}
+1+1
+```
+
