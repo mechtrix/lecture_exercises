@@ -59,11 +59,13 @@ Below are a couple of ways to display data:
 - the `print`command is the most verbose way to output data
 - the `head` command prints only the first couple of lines (can be specified using `head(object, n = X`)
 - the `glimpse` command is very convenient, but needs the `dplyr` package to be loaded or referenced (with `::` as shown below)
+- the `str` command give the structure of the object, so it provides a meta view of the variable. This is convinient if you have some unexpected output.
 
 ```{webr-r}
 print(Titanic)
 head(Titanic)
 dplyr::glimpse(Titanic)
+str(Titanic)
 ```
 
 
@@ -83,15 +85,34 @@ download.file(
 ```
 
 Reading a csv is fairly simple, we just need the file path.
-Lucky for you this has been prepared, the file was already downloaded to the Virtual File System that webR uses.
+Lucky for you this has been prepared, the file was already downloaded to the Virtual File System (VFS) that webR uses.
+Classically, we can use the `read.csv()` function from baseR.
+It is not as convenient, but you do not need to install or download any package to work with it.
+Check out the variable content using the commands above!
 
 ```{webr-r}
-
 flights_data_base <-  read.csv("flights.csv")
-flights_data_readr <-  read.csv("flights.csv")
+```
+
+In the `tidyverse` we also have the [readr](https://readr.tidyverse.org/) package. 
+It give more flexibility, for example specifiying columns.
+We do not need to care about that now, but it is good to know.
+
+```{webr-r}
+flights_data_readr <-  read_csv("flights.csv")
 
 ```
 
-It is hard to provide static files in the webR file system, that is why we will use an uploaded file and download it to the Virtual webR file system.
-You can follow the steps below.
+But we can also explore the VFS a little by using the `getwd()` and the `list.files()` command.
+There you can see the `flights.csv` file that we read in before!
+
+```{webr-r}
+cat("We're currently at:\n")
+getwd()
+
+cat("We have the following files present:\n")
+list.files()
+
+```
+
 
