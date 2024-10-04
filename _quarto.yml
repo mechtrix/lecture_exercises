@@ -2,6 +2,7 @@ project:
   title: "lecture_exercises"
   type: website
   output-dir: docs
+toc: true
     
 
 
