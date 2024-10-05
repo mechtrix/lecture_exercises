@@ -40,5 +40,12 @@
     "title": "Big Data exercises",
     "section": "Databases",
     "text": "Databases\nAs with API’s a real connection to a remote database is right now not feasible using webR. But we can use duckDB which is a fast in-process analytical database. It has one more advantage: It is locally hosted, which means it is a physical file on your machine. We also use dbplyr which is a database backend that uses the same or similar logic as dplyr for data manipulation with remote data sources.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nSo did it work? You can query the object using the same commands as described above. Another way is of course to plot it, but that is hard when we do not know what variables are in the dataset. Sometimes in those cases, the R base plotting is an excellent way of doing some quick E(xplorative)D(ata)A(nalysis)\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "Lecture_exercises.html#web-scraping",
+    "href": "Lecture_exercises.html#web-scraping",
+    "title": "Big Data exercises",
+    "section": "Web scraping",
+    "text": "Web scraping\nIn this example we will scrape the F1 driver data from wikipedia, that is online here. The large table contains a lot of data that we want to download. Again, we can not access the data from webR, that why we need to fake it a little, but the general idea on how to access a page online can be seen below.\n\nlibrary(rvest)\nlink &lt;- \"https://en.wikipedia.org/wiki/List_of_Formula_One_drivers\"\n\nWe take it interactively from here\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   }
 ]

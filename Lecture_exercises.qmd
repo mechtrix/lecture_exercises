@@ -1,5 +1,7 @@
 ---
 title: "Big Data exercises"
+author: 
+  - name: Prof. Dr. Tim A. Weber
 filters: 
   - webr
 webr:
@@ -9,6 +11,8 @@ webr:
     - "ggplot2"
     - "duckdb"
     - "dbplyr"
+    - "janitor"
+    - "rvest"
 editor_options: 
   chunk_output_type: console
 ---
@@ -18,14 +22,11 @@ editor_options:
 #| context: setup
 
 # Download a dataset
-download.file(
-  'https://coatless.github.io/raw-data/flights.csv',
-  'flights.csv'
-)
+download.file('https://coatless.github.io/raw-data/flights.csv','flights.csv')
 
-data_url <- "https://raw.githubusercontent.com/mechtrix/data/main/raw_data/mtcars.duckdb"
+download.file("https://raw.githubusercontent.com/mechtrix/data/main/raw_data/mtcars.duckdb", "mtcars.duckdb")
 
-download.file(data_url, "mtcars.duckdb")
+download.file("https://raw.githubusercontent.com/mechtrix/data/refs/heads/main/raw_data/f1_drivers_wiki_page.html","f1_drivers_wiki_page.html")
 
 ```
 
@@ -252,6 +253,28 @@ Sometimes in those cases, the R base plotting is an excellent way of doing some 
 ```{webr}
 
 plot(mtcars)
+
+```
+
+## Web scraping
+
+In this example we will scrape the F1 driver data from wikipedia, that is online [here](https://en.wikipedia.org/wiki/List_of_Formula_One_drivers).
+The large table contains a lot of data that we want to download.
+Again, we can not access the data from webR, that why we need to fake it a little, but the general idea on how to access a page online can be seen below.
+
+```{r}
+
+library(rvest)
+link <- "https://en.wikipedia.org/wiki/List_of_Formula_One_drivers"
+
+```
+
+We take it interactively from here
+
+```{webr}
+library(rvest)
+
+page <- read_html("f1_drivers_wiki_page.html")
 
 ```
 
