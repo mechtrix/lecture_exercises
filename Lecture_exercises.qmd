@@ -13,6 +13,22 @@ editor_options:
   chunk_output_type: console
 ---
 
+```{webr-r}
+
+#| context: setup
+
+# Download a dataset
+download.file(
+  'https://coatless.github.io/raw-data/flights.csv',
+  'flights.csv'
+)
+
+data_url <- "https://raw.githubusercontent.com/mechtrix/data/main/raw_data/mtcars.duckdb"
+
+download.file(data_url, "mtcars.duckdb")
+
+```
+
 # Getting started
 
 ## Your personal R environment
@@ -89,22 +105,6 @@ str(Titanic)
 
 
 ## csv
-
-```{webr-r}
-
-#| context: setup
-
-# Download a dataset
-download.file(
-  'https://coatless.github.io/raw-data/flights.csv',
-  'flights.csv'
-)
-
-data_url <- "https://raw.githubusercontent.com/mechtrix/data/main/raw_data/mtcars.duckdb"
-
-download.file(data_url, "mtcars.duckdb")
-
-```
 
 Reading a csv is fairly simple, we just need the file path.
 Lucky for you this has been prepared, the file was already downloaded to the Virtual File System (VFS) that webR uses.
@@ -242,6 +242,16 @@ ddb_con <- dbConnect(duckdb(), dbdir = "mtcars.duckdb", read_only = FALSE)
 
 mtcars <- tbl(ddb_con,"mtcars_table") |> collect()
 
+```
+
+So did it work? 
+You can query the object using the same commands as described above.
+Another way is of course to plot it, but that is hard when we do not know what variables are in the dataset.
+Sometimes in those cases, the R base plotting is an excellent way of doing some quick E(xplorative)D(ata)A(nalysis)
+
+```{webr}
+
+plot(mtcars)
 
 ```
 

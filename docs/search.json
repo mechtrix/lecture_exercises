@@ -1,24 +1,17 @@
 [
   {
-    "objectID": "Lecture_exercises.html",
-    "href": "Lecture_exercises.html",
-    "title": "Big Data exercises",
-    "section": "",
-    "text": "Below you can see R running in the browser. It is not as powerful as if we install R on the machine, but it spares us the hassle of setting R up on every of your Computers. You can type some simple math to try it out! You can run single lines by pressing Ctrl + Enter.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nAs most open source software, R builds upon loading libraries. Usually those are found on CRAN, but in our case they need to be provided. Let’s try loading libraries!\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nHere we have loaded the dplyr package, which is used for data manipulation. It is part of the much bigger tidyverse. Since the packages always have to be installed, we will not use the more extensive command library(tidyverse). This would trigger to install a lot of packages. If you want to do this on your own machine, please do so"
-  },
-  {
     "objectID": "Lecture_exercises.html#your-personal-r-environment",
     "href": "Lecture_exercises.html#your-personal-r-environment",
     "title": "Big Data exercises",
-    "section": "",
-    "text": "Below you can see R running in the browser. It is not as powerful as if we install R on the machine, but it spares us the hassle of setting R up on every of your Computers. You can type some simple math to try it out! You can run single lines by pressing Ctrl + Enter.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+    "section": "Your personal R environment",
+    "text": "Your personal R environment\nBelow you can see R running in the browser. It is not as powerful as if we install R on the machine, but it spares us the hassle of setting R up on every of your Computers. You can type some simple math to try it out! You can run single lines by pressing Ctrl + Enter.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   },
   {
     "objectID": "Lecture_exercises.html#loading-libraries",
     "href": "Lecture_exercises.html#loading-libraries",
     "title": "Big Data exercises",
-    "section": "",
-    "text": "As most open source software, R builds upon loading libraries. Usually those are found on CRAN, but in our case they need to be provided. Let’s try loading libraries!\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nHere we have loaded the dplyr package, which is used for data manipulation. It is part of the much bigger tidyverse. Since the packages always have to be installed, we will not use the more extensive command library(tidyverse). This would trigger to install a lot of packages. If you want to do this on your own machine, please do so"
+    "section": "loading libraries",
+    "text": "loading libraries\nAs most open source software, R builds upon loading libraries. Usually those are found on CRAN, but in our case they need to be provided. Let’s try loading libraries!\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nHere we have loaded the dplyr package, which is used for data manipulation. It is part of the much bigger tidyverse. Since the packages always have to be installed, we will not use the more extensive command library(tidyverse). This would trigger to install a lot of packages. If you want to do this on your own machine, please do so"
   },
   {
     "objectID": "Lecture_exercises.html#data-provided-by-r",
@@ -32,7 +25,7 @@
     "href": "Lecture_exercises.html#csv",
     "title": "Big Data exercises",
     "section": "csv",
-    "text": "csv\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nReading a csv is fairly simple, we just need the file path. Lucky for you this has been prepared, the file was already downloaded to the Virtual File System (VFS) that webR uses. Classically, we can use the read.csv() function from baseR. It is not as convenient, but you do not need to install or download any package to work with it. Check out the variable content using the commands above!\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nIn the tidyverse we also have the readr package. It give more flexibility, for example specifiying columns. We do not need to care about that now, but it is good to know.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nBut we can also explore the VFS a little by using the getwd() and the list.files() command. There you can see the flights.csv file that we read in before! When you output the complete VFS - what do you notice?\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+    "text": "csv\nReading a csv is fairly simple, we just need the file path. Lucky for you this has been prepared, the file was already downloaded to the Virtual File System (VFS) that webR uses. Classically, we can use the read.csv() function from baseR. It is not as convenient, but you do not need to install or download any package to work with it. Check out the variable content using the commands above!\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nIn the tidyverse we also have the readr package. It give more flexibility, for example specifiying columns. We do not need to care about that now, but it is good to know.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nBut we can also explore the VFS a little by using the getwd() and the list.files() command. There you can see the flights.csv file that we read in before! When you output the complete VFS - what do you notice?\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   },
   {
     "objectID": "Lecture_exercises.html#api",
@@ -46,6 +39,6 @@
     "href": "Lecture_exercises.html#databases",
     "title": "Big Data exercises",
     "section": "Databases",
-    "text": "Databases\nAs with API’s a real connection to a remote database is right now not feasible using webR. But we can use duckDB which is a fast in-process analytical database. It has one more advantage: It is locally hosted, which means it is a physical file on your machine. We also use dbplyr which is a database backend that uses the same or similar logic as dplyr for data manipulation with remote data sources.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+    "text": "Databases\nAs with API’s a real connection to a remote database is right now not feasible using webR. But we can use duckDB which is a fast in-process analytical database. It has one more advantage: It is locally hosted, which means it is a physical file on your machine. We also use dbplyr which is a database backend that uses the same or similar logic as dplyr for data manipulation with remote data sources.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nSo did it work? You can query the object using the same commands as described above. Another way is of course to plot it, but that is hard when we do not know what variables are in the dataset. Sometimes in those cases, the R base plotting is an excellent way of doing some quick E(xplorative)D(ata)A(nalysis)\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   }
 ]
