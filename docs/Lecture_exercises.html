@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -333,7 +367,7 @@ body.reveal.quarto-dark div.qwebr-console-area {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = [''];
+globalThis.qwebrInstallRPackagesList = ['dplyr', 'jsonlite', 'ggplot2', 'duckdb', 'dbplyr'];
 
 // Specify possible locations to search for the repository
 globalThis.qwebrPackageRepoURLS = ['https://repo.r-wasm.org/'];
@@ -355,7 +389,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"id":1,"code":"1+1","options":{"editor-font-scale":"1","editor-max-height":"","output":"true","results":"markup","fig-width":7,"fig-cap":"","classes":"","editor-word-wrap":"true","read-only":"false","message":"true","dpi":72,"warning":"true","fig-height":5,"autorun":"false","label":"unnamed-chunk-1","comment":"","context":"interactive","editor-quick-suggestions":"false","out-height":"","out-width":"700px"}},{"id":2,"code":"library(dplyr)","options":{"editor-font-scale":"1","editor-max-height":"","output":"true","results":"markup","fig-width":7,"fig-cap":"","classes":"","editor-word-wrap":"true","read-only":"false","message":"true","dpi":72,"warning":"true","fig-height":5,"autorun":"false","label":"unnamed-chunk-2","comment":"","context":"interactive","editor-quick-suggestions":"false","out-height":"","out-width":"700px"}},{"id":3,"code":"data(\"Titanic\")","options":{"editor-font-scale":"1","editor-max-height":"","output":"true","results":"markup","fig-width":7,"fig-cap":"","classes":"","editor-word-wrap":"true","read-only":"false","message":"true","dpi":72,"warning":"true","fig-height":5,"autorun":"false","label":"unnamed-chunk-3","comment":"","context":"interactive","editor-quick-suggestions":"false","out-height":"","out-width":"700px"}},{"id":4,"code":"print(Titanic)\nhead(Titanic)\ndplyr::glimpse(Titanic)\nstr(Titanic)","options":{"editor-font-scale":"1","editor-max-height":"","output":"true","results":"markup","fig-width":7,"fig-cap":"","classes":"","editor-word-wrap":"true","read-only":"false","message":"true","dpi":72,"warning":"true","fig-height":5,"autorun":"false","label":"unnamed-chunk-4","comment":"","context":"interactive","editor-quick-suggestions":"false","out-height":"","out-width":"700px"}},{"id":5,"code":"# Download a dataset\ndownload.file(\n  'https://coatless.github.io/raw-data/flights.csv',\n  'flights.csv'\n)\n","options":{"editor-font-scale":"1","editor-max-height":"","output":"true","results":"markup","fig-width":7,"fig-cap":"","classes":"","editor-word-wrap":"true","read-only":"false","message":"true","dpi":72,"warning":"true","fig-height":5,"autorun":"true","label":"unnamed-chunk-5","comment":"","context":"setup","editor-quick-suggestions":"false","out-height":"","out-width":"700px"}},{"id":6,"code":"flights_data_base <-  read.csv(\"flights.csv\")","options":{"editor-font-scale":"1","editor-max-height":"","output":"true","results":"markup","fig-width":7,"fig-cap":"","classes":"","editor-word-wrap":"true","read-only":"false","message":"true","dpi":72,"warning":"true","fig-height":5,"autorun":"false","label":"unnamed-chunk-6","comment":"","context":"interactive","editor-quick-suggestions":"false","out-height":"","out-width":"700px"}},{"id":7,"code":"flights_data_readr <-  read_csv(\"flights.csv\")","options":{"editor-font-scale":"1","editor-max-height":"","output":"true","results":"markup","fig-width":7,"fig-cap":"","classes":"","editor-word-wrap":"true","read-only":"false","message":"true","dpi":72,"warning":"true","fig-height":5,"autorun":"false","label":"unnamed-chunk-7","comment":"","context":"interactive","editor-quick-suggestions":"false","out-height":"","out-width":"700px"}},{"id":8,"code":"cat(\"We're currently at:\\n\")\ngetwd()\n\ncat(\"We have the following files present:\\n\")\nlist.files()","options":{"editor-font-scale":"1","editor-max-height":"","output":"true","results":"markup","fig-width":7,"fig-cap":"","classes":"","editor-word-wrap":"true","read-only":"false","message":"true","dpi":72,"warning":"true","fig-height":5,"autorun":"false","label":"unnamed-chunk-8","comment":"","context":"interactive","editor-quick-suggestions":"false","out-height":"","out-width":"700px"}}];
+globalThis.qwebrCellDetails = [{"code":"1+1","id":1,"options":{"editor-word-wrap":"true","message":"true","warning":"true","context":"interactive","comment":"","classes":"","label":"unnamed-chunk-1","out-width":"700px","fig-height":5,"editor-quick-suggestions":"false","results":"markup","dpi":72,"read-only":"false","autorun":"false","editor-max-height":"","editor-font-scale":"1","output":"true","fig-cap":"","fig-width":7,"out-height":""}},{"code":"library(dplyr)","id":2,"options":{"editor-word-wrap":"true","message":"true","warning":"true","context":"interactive","comment":"","classes":"","label":"unnamed-chunk-2","out-width":"700px","fig-height":5,"editor-quick-suggestions":"false","results":"markup","dpi":72,"read-only":"false","autorun":"false","editor-max-height":"","editor-font-scale":"1","output":"true","fig-cap":"","fig-width":7,"out-height":""}},{"code":"data(\"Titanic\")","id":3,"options":{"editor-word-wrap":"true","message":"true","warning":"true","context":"interactive","comment":"","classes":"","label":"unnamed-chunk-3","out-width":"700px","fig-height":5,"editor-quick-suggestions":"false","results":"markup","dpi":72,"read-only":"false","autorun":"false","editor-max-height":"","editor-font-scale":"1","output":"true","fig-cap":"","fig-width":7,"out-height":""}},{"code":"print(Titanic)","id":4,"options":{"editor-word-wrap":"true","message":"true","warning":"true","context":"interactive","comment":"","classes":"","label":"unnamed-chunk-4","out-width":"700px","fig-height":5,"editor-quick-suggestions":"false","results":"markup","dpi":72,"read-only":"false","autorun":"false","editor-max-height":"","editor-font-scale":"1","output":"true","fig-cap":"","fig-width":7,"out-height":""}},{"code":"head(Titanic)","id":5,"options":{"editor-word-wrap":"true","message":"true","warning":"true","context":"interactive","comment":"","classes":"","label":"unnamed-chunk-5","out-width":"700px","fig-height":5,"editor-quick-suggestions":"false","results":"markup","dpi":72,"read-only":"false","autorun":"false","editor-max-height":"","editor-font-scale":"1","output":"true","fig-cap":"","fig-width":7,"out-height":""}},{"code":"dplyr::glimpse(Titanic)","id":6,"options":{"editor-word-wrap":"true","message":"true","warning":"true","context":"interactive","comment":"","classes":"","label":"unnamed-chunk-6","out-width":"700px","fig-height":5,"editor-quick-suggestions":"false","results":"markup","dpi":72,"read-only":"false","autorun":"false","editor-max-height":"","editor-font-scale":"1","output":"true","fig-cap":"","fig-width":7,"out-height":""}},{"code":"str(Titanic)","id":7,"options":{"editor-word-wrap":"true","message":"true","warning":"true","context":"interactive","comment":"","classes":"","label":"unnamed-chunk-7","out-width":"700px","fig-height":5,"editor-quick-suggestions":"false","results":"markup","dpi":72,"read-only":"false","autorun":"false","editor-max-height":"","editor-font-scale":"1","output":"true","fig-cap":"","fig-width":7,"out-height":""}},{"code":"# Download a dataset\ndownload.file(\n  'https://coatless.github.io/raw-data/flights.csv',\n  'flights.csv'\n)\n\ndata_url <- \"https://raw.githubusercontent.com/mechtrix/data/main/raw_data/mtcars.duckdb\"\n\ndownload.file(data_url, \"mtcars.duckdb\")","id":8,"options":{"editor-word-wrap":"true","message":"true","warning":"true","context":"setup","comment":"","classes":"","label":"unnamed-chunk-8","out-width":"700px","fig-height":5,"editor-quick-suggestions":"false","results":"markup","dpi":72,"read-only":"false","autorun":"true","editor-max-height":"","editor-font-scale":"1","output":"true","fig-cap":"","fig-width":7,"out-height":""}},{"code":"flights_data_base <-  read.csv(\"flights.csv\")","id":9,"options":{"editor-word-wrap":"true","message":"true","warning":"true","context":"interactive","comment":"","classes":"","label":"unnamed-chunk-9","out-width":"700px","fig-height":5,"editor-quick-suggestions":"false","results":"markup","dpi":72,"read-only":"false","autorun":"false","editor-max-height":"","editor-font-scale":"1","output":"true","fig-cap":"","fig-width":7,"out-height":""}},{"code":"library(readr)\nflights_data_readr <-  read_csv(\"flights.csv\")","id":10,"options":{"editor-word-wrap":"true","message":"true","warning":"true","context":"interactive","comment":"","classes":"","label":"unnamed-chunk-10","out-width":"700px","fig-height":5,"editor-quick-suggestions":"false","results":"markup","dpi":72,"read-only":"false","autorun":"false","editor-max-height":"","editor-font-scale":"1","output":"true","fig-cap":"","fig-width":7,"out-height":""}},{"code":"getwd()\n\nlist.files()\n\nlist.files('/', full = TRUE, recursive = TRUE)","id":11,"options":{"editor-word-wrap":"true","message":"true","warning":"true","context":"interactive","comment":"","classes":"","label":"unnamed-chunk-11","out-width":"700px","fig-height":5,"editor-quick-suggestions":"false","results":"markup","dpi":72,"read-only":"false","autorun":"false","editor-max-height":"","editor-font-scale":"1","output":"true","fig-cap":"","fig-width":7,"out-height":""}},{"code":"library(jsonlite)\n\ndata_url <- \"https://raw.githubusercontent.com/mechtrix/data/main/raw_data/foodbank\"\n\ndownload.file(data_url, \"foodbank\")\n\nfoodbankRAW <- readLines(\"foodbank\")\n\nfoodbankJSON <- jsonlite::fromJSON(foodbankRAW)\n\ndplyr::glimpse(foodbankJSON)","id":12,"options":{"editor-word-wrap":"true","message":"true","warning":"true","context":"interactive","comment":"","classes":"","label":"unnamed-chunk-12","out-width":"700px","fig-height":5,"editor-quick-suggestions":"false","results":"markup","dpi":72,"read-only":"false","autorun":"false","editor-max-height":"","editor-font-scale":"1","output":"true","fig-cap":"","fig-width":7,"out-height":""}},{"code":"cnt_foodbank <- foodbankJSON |> \n  count(country)","id":13,"options":{"editor-word-wrap":"true","message":"true","warning":"true","context":"interactive","comment":"","classes":"","label":"unnamed-chunk-13","out-width":"700px","fig-height":5,"editor-quick-suggestions":"false","results":"markup","dpi":72,"read-only":"false","autorun":"false","editor-max-height":"","editor-font-scale":"1","output":"true","fig-cap":"","fig-width":7,"out-height":""}},{"code":"cnt_foodbank |> \n  ggplot(\n    aes(\n      x = reorder(country,-n),\n      y = n\n    )\n  )+\n  geom_col()+\n  labs(\n    title = \"Count of foddbanks in the UK per region\",\n    x = \"region\",\n    y = \"count\"\n  )","id":14,"options":{"editor-word-wrap":"true","message":"true","warning":"true","context":"interactive","comment":"","classes":"","label":"unnamed-chunk-14","out-width":"700px","fig-height":5,"editor-quick-suggestions":"false","results":"markup","dpi":72,"read-only":"false","autorun":"false","editor-max-height":"","editor-font-scale":"1","output":"true","fig-cap":"","fig-width":7,"out-height":""}},{"code":"library(duckdb)\nlibrary(dbplyr)\n\nddb_con <- dbConnect(duckdb(), dbdir = \"mtcars.duckdb\", read_only = FALSE)\n\nmtcars <- tbl(ddb_con,\"mtcars_table\") |> collect()\n","id":15,"options":{"editor-word-wrap":"true","message":"true","warning":"true","context":"interactive","comment":"","classes":"","label":"unnamed-chunk-15","out-width":"700px","fig-height":5,"editor-quick-suggestions":"false","results":"markup","dpi":72,"read-only":"false","autorun":"false","editor-max-height":"","editor-font-scale":"1","output":"true","fig-cap":"","fig-width":7,"out-height":""}}];
 
 </script>
 <script type="module">
@@ -1577,6 +1611,8 @@ globalThis.qwebrExecuteCode = async function (
   <ul class="collapse">
   <li><a href="#data-provided-by-r" id="toc-data-provided-by-r" class="nav-link" data-scroll-target="#data-provided-by-r">data provided by R</a></li>
   <li><a href="#csv" id="toc-csv" class="nav-link" data-scroll-target="#csv">csv</a></li>
+  <li><a href="#api" id="toc-api" class="nav-link" data-scroll-target="#api">API</a></li>
+  <li><a href="#databases" id="toc-databases" class="nav-link" data-scroll-target="#databases">Databases</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1911,22 +1947,76 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>You can simply use data that is natively provided by R. A famous example is the titanic data set. Do this using the <code>data()</code> command as provided below</p>
 <div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>There is not a lot that happened, because we do not use an IDE. An IDE like RStudio would acutally display the variables. This is a trade-off we have to live with the convinienct of not setting up R, but of course, there are ways around it. Below are a couple of ways to display data: - the <code>print</code>command is the most verbose way to output data - the <code>head</code> command prints only the first couple of lines (can be specified using <code>head(object, n = X</code>) - the <code>glimpse</code> command is very convenient, but needs the <code>dplyr</code> package to be loaded or referenced (with <code>::</code> as shown below) - the <code>str</code> command give the structure of the object, so it provides a meta view of the variable. This is convinient if you have some unexpected output.</p>
+<p>There is not a lot that happened, because we do not use an IDE. An IDE like RStudio would acutally display the variables. This is a trade-off we have to live with the convinienct of not setting up R, but of course, there are ways around it. Below are a couple of ways to display data: - the <code>print</code>command is the most verbose way to output data - the <code>head</code> command prints only the first couple of lines (can be specified using <code>head(object, n = X</code>) - the <code>glimpse</code> command is very convenient, but needs the <code>dplyr</code> package to be loaded or referenced (with <code>::</code> as shown below) - the <code>str</code> command give the structure of the object, so it provides a meta view of the variable. This is convenient if you have some unexpected output.</p>
 <div id="qwebr-insertion-location-4"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div id="qwebr-insertion-location-5"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div id="qwebr-insertion-location-6"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div id="qwebr-insertion-location-7"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
 <section id="csv" class="level2">
 <h2 class="anchored" data-anchor-id="csv">csv</h2>
-<div id="qwebr-insertion-location-5"></div>
+<div id="qwebr-insertion-location-8"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>Reading a csv is fairly simple, we just need the file path. Lucky for you this has been prepared, the file was already downloaded to the Virtual File System (VFS) that webR uses. Classically, we can use the <code>read.csv()</code> function from baseR. It is not as convenient, but you do not need to install or download any package to work with it. Check out the variable content using the commands above!</p>
-<div id="qwebr-insertion-location-6"></div>
+<div id="qwebr-insertion-location-9"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>In the <code>tidyverse</code> we also have the <a href="https://readr.tidyverse.org/">readr</a> package. It give more flexibility, for example specifiying columns. We do not need to care about that now, but it is good to know.</p>
-<div id="qwebr-insertion-location-7"></div>
+<div id="qwebr-insertion-location-10"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>But we can also explore the VFS a little by using the <code>getwd()</code> and the <code>list.files()</code> command. There you can see the <code>flights.csv</code> file that we read in before!</p>
-<div id="qwebr-insertion-location-8"></div>
+<p>But we can also explore the VFS a little by using the <code>getwd()</code> and the <code>list.files()</code> command. There you can see the <code>flights.csv</code> file that we read in before! When you output the complete VFS - what do you notice?</p>
+<div id="qwebr-insertion-location-11"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</section>
+<section id="api" class="level2">
+<h2 class="anchored" data-anchor-id="api">API</h2>
+<p>Below you can try to get data from an API. This is not yet possible using webR for technical and security reasons. In theory, it would go like this:</p>
+<p>This is the Give Food API at <a href="https://www.givefood.org.uk/api/2/docs/">givefood.org.uk</a> and shall give us a brief introduction on how to work with API’s. We need two packages: <a href="https://CRAN.R-project.org/package=httr">httr</a> and <a href="https://CRAN.R-project.org/package=jsonlite">jsonlite</a>. We are pulling data from a data source that does not need a key <a href="https://www.givefood.org.uk/api/2/docs/">foodbank</a>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(httr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>foodbank <span class="ot">&lt;-</span> httr<span class="sc">::</span><span class="fu">GET</span>(<span class="st">"https://www.givefood.org.uk/api/2/foodbanks/"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>foodbankcontent <span class="ot">&lt;-</span> httr<span class="sc">::</span><span class="fu">content</span>(foodbank, <span class="at">as =</span> <span class="st">"text"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>No encoding supplied: defaulting to UTF-8.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>foodbankJSON <span class="ot">&lt;-</span> jsonlite<span class="sc">::</span><span class="fu">fromJSON</span>(foodbankcontent)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<pre><code>Response [https://www.givefood.org.uk/api/2/foodbanks/]
+  Date: 2024-10-05 07:50
+  Status: 200
+  Content-Type: application/json
+  Size: 1.28 MB
+[
+  {
+    "name": "Lapford Food Bank",
+    "alt_name": null,
+    "slug": "lapford",
+    "phone": "0136383788",
+    "secondary_phone": null,
+    "email": "foodbank@lapfordcc.org.uk",
+    "address": "Victory Hall\r\nLapford\r\nDevon\r\nEX17 6PZ",
+    "postcode": "EX17 6PZ",
+...</code></pre>
+<p>But we can “fake” an API call, just to be able to play around a little with json files. For this we will download the data that is provided by the API as a csv and re-read it into R.</p>
+<div id="qwebr-insertion-location-12"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Ok, so now we have data, but what can we do with it? Below is some code where we count the foodbanks according to region in the UK.</p>
+<div id="qwebr-insertion-location-13"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>We then add a ordered barplot so show the counts. Piece o’ cake!</p>
+<div id="qwebr-insertion-location-14"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</section>
+<section id="databases" class="level2">
+<h2 class="anchored" data-anchor-id="databases">Databases</h2>
+<p>As with API’s a <em>real</em> connection to a remote database is right now not feasible using webR. But we can use <em>duckDB</em> which is a fast in-process analytical database. It has one more advantage: It is locally hosted, which means it is a physical file on your machine. We also use <a href="https://dbplyr.tidyverse.org/">dbplyr</a> which is a database backend that uses the same or similar logic as <em>dplyr</em> for data manipulation with remote data sources.</p>
+<div id="qwebr-insertion-location-15"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 
 
